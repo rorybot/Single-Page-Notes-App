@@ -21,5 +21,10 @@ Renderer.prototype.renderLinks = function(notes){
   return "<ul class='note_list'>" + renderedLinks + "</ul>"
 }
 
+Renderer.prototype.singleNote = function (noteIndex, notes) {
+  var note = notes[noteIndex];
+  return "<div class='single_note'>" + note.returnNote() + "</div>";
+};
+
 exports.Renderer = Renderer;
 })(this);

@@ -20,7 +20,7 @@ function showSingleNote() {
     .addEventListener("hashchange", function(showNote) {
       var noteIndex = location.hash.split("$")[1];
       var values = {
-        single_note: noteBuddy.singleNote(noteIndex)
+        single_note: renderer.singleNote(noteIndex, noteBuddy.list)
       };
       renderer.view(values);
     });
