@@ -10,13 +10,8 @@ function createNote() {
   .getElementById("create_note")
   .addEventListener("click", function(clickEvent) {
     clickEvent.preventDefault();
-    var text = document.getElementById("note").value;
-    noteBuddy.createNote(text);
-    var values = {
-      note_list: noteBuddy.noteList(),
-      buddy: buddy.createNote()
-    };
-    renderer.view(values);
+    _noteCreationCall()
+    _renderLinks()
   });
 }
 
@@ -29,4 +24,18 @@ function showSingleNote() {
       };
       renderer.view(values);
     });
+}
+
+function _noteCreationCall(){
+  var text = document.getElementById("note").value;
+  noteBuddy.createNote(text);
+}
+
+function _renderLinks(){
+  var renderedLinks = renderer.renderLinks(noteBuddy.list)
+  var values = {
+    note_list: renderedLinks,
+    buddy: buddy.createNote()
+  };
+  renderer.view(values);
 }
