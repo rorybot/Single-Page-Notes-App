@@ -23,7 +23,7 @@
       test.expectToEqual(true);
     }
     testCreateNote();
-  
+
 
     function testNoteList() {
       var test = new PingPongSpec();
